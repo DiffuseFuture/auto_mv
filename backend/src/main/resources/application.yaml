@@ -1,0 +1,137 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /ohyesai-next
+
+spring:
+  profiles:
+    active: local # 默认激活本地
+  cache:
+    type: redis
+  application:
+    name: ohyesai-next-server
+  threads:
+    virtual:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 60MB
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+logging:
+  pattern:
+    file: &pattern "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} [%thread] %-5level [%X{trace-id}] %logger- %msg%n"
+    console: *pattern
+  file:
+    name: logs/application.log
+  logback:
+    rollingpolicy:
+      # ${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.log
+      max-history: 7
+      max-file-size: 50MB
+#  level:
+#    com.ohyesai: debug
+
+# springdoc-openapi
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.ohyesai.next
+knife4j:
+  enable: true
+  basic:
+    enable: true
+    username: user
+    password: user
+
+sa-token:
+  # token 名称（同时也是 cookie 名称）
+  token-name: ohyesainext-token
+  # token 有效期（单位：秒） 默认30天，-1 代表永久有效
+  timeout: 2592000
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: false
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+
+##################### tos ###########################################
+tos:
+  endpoint: tos-cn-beijing.volces.com
+  accessKey: 
+  secretKey: 
+
+#################### wx ##############################################
+wx:
+  mp:
+    appid: 
+    secret: 
+    sub-jump-state: developer
+  ## 微信平台
+  wa:
+    appid: 
+    secret: 
+
+######################### model api ######################
+model-api:
+  omnimaas:
+    ak: 
+  sunoapi:
+    ak: 
+  volc-fangzhou:
+    ak: 
+  vidu:
+    ak: 
+  mureka:
+    ak: 
+  replicate:
+    ak: 
+  # 火山 AI MediaKit
+  volc-mediakit:
+    ak: 
+
+####################### pay ###########################
+pay:
+  wx:
+    api_v3_key: 
+    private_key: 
+    merchant_id: 
+    merchant_serial_number: 
+    # 小程序id
+    app_id: 
+    notifyUrl: 
+  ali:
+    appid: 
+    private_key: 
+    public_key: 
+    notify_url: 
+  # 支付白名单 设置后支付为1分钱
+  payWhiteList:
+    - "13888888888"
+
+###################  ali sms  #####################
+sms:
+  ak: 
+  sk: 
+
+###################  feishu webhook api错误通知使用 ####################
+feishu-webhook: 

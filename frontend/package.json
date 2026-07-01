@@ -1,0 +1,40 @@
+{
+  "name": "ohyesai-next-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "copy-ffmpeg": "node scripts/copy-ffmpeg.mjs",
+    "dev": "npm run copy-ffmpeg && vite",
+    "build": "npm run copy-ffmpeg && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "@microsoft/fetch-event-source": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@yeger/vue-masonry-wall": "^5.1.1",
+    "axios": "^1.13.4",
+    "dompurify": "^3.3.3",
+    "element-plus": "^2.13.2",
+    "github-markdown-css": "^5.9.0",
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.1",
+    "pinia": "^3.0.4",
+    "qrcode": "^1.5.4",
+    "vue": "^3.5.24",
+    "vue-router": "^5.0.2",
+    "wavesurfer.js": "^7.12.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "postcss-pxtorem": "^6.1.0",
+    "sass": "^1.97.3",
+    "tailwindcss": "^3.4.19",
+    "vite": "^7.2.4"
+  }
+}

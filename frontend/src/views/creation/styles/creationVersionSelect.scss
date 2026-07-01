@@ -1,0 +1,115 @@
+.creation-version-select,
+.subject-version-select,
+.dialog-version-select {
+  width: 56px;
+
+  .el-select__wrapper {
+    min-height: 28px;
+    padding: 0 8px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    border: none !important;
+    border-radius: 10px;
+
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+      border: none !important;
+    }
+  }
+
+  .el-select__selection,
+  .el-select__selected-item,
+  .el-select__placeholder,
+  .el-select__input,
+  .el-select__input-wrapper {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+  }
+
+  .el-select__selection {
+    .el-select__selected-item,
+    .el-select__placeholder {
+      color: #C2FF00;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+
+  .el-select__caret {
+    color: rgba(184, 255, 26, 0.95);
+    font-size: 12px;
+  }
+}
+
+.creation-version-select-popper,
+.subject-version-select-popper,
+.dialog-version-select-popper {
+  &.el-select__popper.el-popper {
+    background: #070707 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+
+  .el-select-dropdown,
+  .el-select-dropdown__wrap,
+  .el-select-dropdown__list,
+  .el-scrollbar__wrap,
+  .el-select-dropdown__header,
+  .el-select-dropdown__footer {
+    background: #070707 !important;
+    border-radius: 10px !important;
+  }
+
+  .el-select-dropdown {
+    min-width: 56px !important;
+    width: 56px !important;
+  }
+
+  .el-select-dropdown__wrap {
+    padding: 0 !important;
+    overflow: hidden;
+    box-shadow: none !important;
+  }
+
+  .el-select-dropdown__list {
+    padding: 0 !important;
+  }
+
+  .el-select-dropdown__header,
+  .el-select-dropdown__footer {
+    border-color: transparent !important;
+  }
+
+  .el-select-dropdown__item {
+    color: #C2FF00;
+    background: transparent !important;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 28px;
+    height: 28px;
+    min-height: 28px;
+    padding: 0 10px !important;
+    text-align: left;
+  }
+
+  .el-select-dropdown__item.is-selected,
+  .el-select-dropdown__item:hover,
+  .el-select-dropdown__item.is-hovering {
+    background: rgba(184, 255, 26, 0.14) !important;
+    color: #d8ff72 !important;
+  }
+
+  .el-popper__arrow {
+    display: none !important;
+  }
+}

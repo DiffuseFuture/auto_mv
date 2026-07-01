@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohyesai.next.biz.vio.mapper.VioProjectMapper">
+
+    <resultMap id="BaseResultMap" type="com.ohyesai.next.biz.vio.entity.VioProject">
+        <id property="id" column="vp_id"/>
+        <result property="userId" column="vp_user_id"/>
+        <result property="sessionId" column="vp_session_id"/>
+        <result property="messageId" column="vp_message_id"/>
+        <result property="projectName" column="vp_project_name"/>
+        <result property="args" column="vp_args"/>
+        <result property="fileId" column="vp_file_id"/>
+        <result property="previewFileId" column="vp_preview_file_id"/>
+        <result property="mediaDuration" column="vp_media_duration"/>
+        <result property="taskType" column="vp_task_type"/>
+        <result property="showProject" column="vp_show_project"/>
+        <result property="createTime" column="vp_create_time"/>
+    </resultMap>
+
+    <resultMap id="SelectPageJoinUserResultMap" type="com.ohyesai.next.biz.vio.bo.VioProjectJoinUser"
+               extends="BaseResultMap">
+        <result property="nickName" column="nick_name"/>
+        <result property="avatarImg" column="avatar_img"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        vp.id vp_id,
+        vp.user_id vp_user_id,
+        vp.session_id vp_session_id,
+        vp.message_id vp_message_id,
+        vp.project_name vp_project_name,
+        vp.args vp_args,
+        vp.file_id vp_file_id,
+        vp.preview_file_id vp_preview_file_id,
+        vp.media_duration vp_media_duration,
+        vp.task_type vp_task_type,
+        vp.show_project vp_show_project,
+        vp.create_time vp_create_time
+    </sql>
+
+    <select id="selectPageJoinUser" resultMap="SelectPageJoinUserResultMap">
+        select
+        <include refid="Base_Column_List"/>,
+        u.nick_name ,u.avatar_img
+
+        from vio_project vp
+        inner join user u on u.id = vp.user_id
+        inner join share_vio_project svp on vp.id = svp.vio_project_id
+<!--        where vp.id in-->
+<!--        <foreach item="t" collection="ids" open="(" separator="," close=")">-->
+<!--            #{t}-->
+<!--        </foreach>-->
+        order by svp.id desc
+    </select>
+
+</mapper>

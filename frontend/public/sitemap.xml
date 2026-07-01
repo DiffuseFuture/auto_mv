@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap：列 canonical URL，不列 301 跳转源。
+  当前英文版未上线，仅暴露 /zh/ 路径，避免引导用户进入未完成的英文页面导致跳出率反噬。
+  英文上线后追加 /en/ 对应条目 + <xhtml:link rel="alternate" hreflang="..."/> 双语对照
+  （hreflang 替代 URL 不计入 50,000 URL 上限，参考 Google Search Central）。
+
+  字段权重（参考 Google Search Central 2026 指南）：
+  - <loc>：必填，canonical 绝对 URL。
+  - <lastmod>：⭐ Google 当前唯一实际使用的字段，决定再抓取频率。
+    必须真实反映"主体内容 / 结构化数据 / 内链"的最后实质性变更日期；
+    严禁为了诱导 Google 重新抓取而批量改成今天——Google 会判定 sitemap 不可信，反而降低抓取意愿。
+  - <changefreq> / <priority>：Google 自 2017 起已基本忽略；
+    保留仅为兼容 Bing / 第三方 SEO 工具，且必须与实际更新频率一致（虚报 daily 会被判定不可信）。
+
+  ⚠️ 维护规则：
+  - 新增路由 → 同步加 <url> 条目，<lastmod> = 当天日期
+  - 已存在路由的内容实质性更新（文案改版 / 结构化数据 / 关键内链）→ 仅更新该条目的 <lastmod>
+  - 仅样式 / 拼写微调 / 不可见技术改动 → 不更新 <lastmod>
+  - 路径下线 / 改 canonical → 立即删除对应条目（不要留下 404 / 重定向源）
+
+  注：/zh/share 不入 sitemap——需要 ?shareId= 才能展示内容，无 query 时是空页，索引价值为零。
+  /zh/creation 和 /zh/resource 需登录态，已在 robots.txt 中 Disallow，也不入 sitemap。
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 首页：创作广场瀑布流每日有新作品入榜，内容确实日级更新 -->
+  <url>
+    <loc>https://www.ohyesai.com/zh/mv</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 订阅页：套餐与定价偶尔调整 -->
+  <url>
+    <loc>https://www.ohyesai.com/zh/subscribe</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 通用常见问题：信息型内容，支撑长尾关键词（"OhYesAI 怎么用 / 如何登录 / API 调用"等） -->
+  <url>
+    <loc>https://www.ohyesai.com/zh/faq</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 订阅相关 FAQ：积分规则等深度信息 -->
+  <url>
+    <loc>https://www.ohyesai.com/zh/subscribe-faq</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 法律条款：合规必要，年级更新 -->
+  <url>
+    <loc>https://www.ohyesai.com/zh/policy/terms</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ohyesai.com/zh/policy/privacy</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

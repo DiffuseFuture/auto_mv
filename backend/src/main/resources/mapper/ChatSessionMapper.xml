@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohyesai.next.biz.vio.mapper.ChatSessionMapper">
+
+    <resultMap id="BaseResultMap" type="com.ohyesai.next.biz.vio.entity.ChatSession">
+        <id property="id" column="cs_id"/>
+        <result property="userId" column="cs_user_id"/>
+        <result property="name" column="cs_name"/>
+        <result property="updateTime" column="cs_update_time"/>
+        <result property="createTime" column="cs_create_time"/>
+    </resultMap>
+
+    <resultMap id="SelectChatHistoryResultMap" type="com.ohyesai.next.biz.vio.bo.ChatHistoryBO">
+        <id property="sessionId" column="cs_id"/>
+        <collection property="chatMessages" ofType="com.ohyesai.next.biz.vio.bo.HistoryMessageBO">
+            <id property="messageId" column="hm_id"/>
+            <result property="seqNo" column="hm_seq_no"/>
+            <result property="senderType" column="hm_sender_type"/>
+            <result property="finish" column="hm_finish"/>
+            <collection property="messageChunks" ofType="com.ohyesai.next.biz.vio.bo.HistoryMessageChunkBO">
+                <id property="messageChunkId" column="hmc_id"/>
+                <result property="content" column="hmc_chunk"/>
+            </collection>
+        </collection>
+
+    </resultMap>
+
+    <select id="selectChatHistory" resultMap="SelectChatHistoryResultMap">
+        select
+        cs.id cs_id,
+        hm.id hm_id,hm.seq_no hm_seq_no,hm.sender_type hm_sender_type,hm.finish hm_finish,
+        hmc.id hmc_id,hmc.chunk hmc_chunk
+        from chat_session cs
+        inner join history_message hm on cs.id = hm.chat_session_id
+        inner join history_message_chunk hmc on hmc.history_message_id = hm.id
+        where cs.id = #{sessionId}
+        order by hm.seq_no asc,hmc.id asc
+    </select>
+
+</mapper>

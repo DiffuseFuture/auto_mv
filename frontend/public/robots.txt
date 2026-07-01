@@ -1,0 +1,20 @@
+# OhYesAI Robots.txt
+# https://www.ohyesai.com/robots.txt
+#
+# 规则说明：
+# - 默认 Allow: /，所有未列出的路径都允许抓取；不再写冗余 Allow 行。
+# - Disallow 用 `/*/path` 通配语法，覆盖所有语言前缀（/zh/ 和未来 /en/）。
+#   robots.txt 是前缀匹配，单写 `/creation` 不会命中 `/zh/creation`，必须用 `*` 通配。
+
+User-agent: *
+
+# 鉴权页：抓了也是空壳，浪费 crawl budget
+Disallow: /creation
+Disallow: /resource
+Disallow: /*/creation
+Disallow: /*/resource
+
+# API 端点
+Disallow: /ohyesai-next/
+
+Sitemap: https://www.ohyesai.com/sitemap.xml

@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    username: 
+    password: 
+    url: jdbc:mysql://127.0.0.1:3306/ohyesainext?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+
+##################### tos ###########################################
+tos:
+  bucket: ohyesainext-test
+
+######################## ffmpeg path #######################
+ffmpeg-path: /usr/bin/ffmpeg
+ffprobe-path: /usr/bin/ffprobe
+
+
+########################### pay ############################
+pay:
+  wx:
+    # 支付回掉
+    notifyUrl: 
+
+######################### model api ######################
+model-api:
+  # 自己的 new api
+  guoyan:
+    ak: 
+
+#################### mv-audio-analyzer ################################
+mv-analyzer:
+  base-url: http://127.0.0.1:8000

@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-17T00:00:00.000Z" agent="opencode" version="24.0.0" type="device">
+  <diagram id="layered-view" name="1. 应用分层架构图">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="L0" />
+        <mxCell id="L1" parent="L0" />
+        <mxCell id="title" value="AI 智能 MV 创作系统 — 应用分层架构图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="300" y="20" width="1060" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="图例:  接入/编排   AI 创作助手   业务能力   多模型适配   基础设施" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12" vertex="1" parent="L1">
+          <mxGeometry x="300" y="60" width="1060" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1" value="用户接入层" style="swimlane;startSize=30;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="100" width="1420" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-c1" value="Web / 移动端 / 小程序&#10;MV 创作工作台&#10;实时进度推送与可视化交互" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf" vertex="1" parent="layer1">
+          <mxGeometry x="40" y="40" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-c2" value="个人作品库&#10;MV / 音乐作品管理&#10;分享、二次编辑、版本切换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#27ae60" vertex="1" parent="layer1">
+          <mxGeometry x="340" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-c3" value="第三方开放接口&#10;面向 ISV / 平台型客户&#10;APIKey 鉴权 + 标准化能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf" vertex="1" parent="layer1">
+          <mxGeometry x="660" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-c4" value="运营管理后台&#10;积分与套餐 / 用户管理&#10;支付 / 反馈 / 行为埋点" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf" vertex="1" parent="layer1">
+          <mxGeometry x="980" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-c5" value="终端用户&#10;C 端 / B 端&#10;音乐人、创作者" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=2" vertex="1" parent="layer1">
+          <mxGeometry x="1300" y="40" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2" value="业务编排层" style="swimlane;startSize=30;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="230" width="1420" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-c1" value="智能对话编排&#10;流式会话 + 多轮记忆&#10;进度实时同步" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf" vertex="1" parent="layer2">
+          <mxGeometry x="180" y="40" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-c2" value="开放能力编排&#10;歌词 / 音乐 / MV 一键提交&#10;异步状态查询" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf" vertex="1" parent="layer2">
+          <mxGeometry x="540" y="40" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-c3" value="会话与任务管理&#10;会话上下文 / 任务状态&#10;消息流持久化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf" vertex="1" parent="layer2">
+          <mxGeometry x="900" y="40" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3" value="AI 创作助手层 (智能体)" style="swimlane;startSize=30;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="350" width="1420" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c1" value="创作助手主控&#10;意图理解 + 流程编排&#10;动态加载 SOP 模板" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="layer3">
+          <mxGeometry x="60" y="40" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c2" value="意图路由&#10;MV / 音乐 / 积分 / 其他&#10;风格标准化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6" vertex="1" parent="layer3">
+          <mxGeometry x="470" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c3" value="脚本生成专家 ★&#10;MV 全局规划 + 分镜设计&#10;参考图理解" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;align=left;spacingLeft=18" vertex="1" parent="layer3">
+          <mxGeometry x="720" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c3-bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="layer3">
+          <mxGeometry x="720" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c3-bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="layer3">
+          <mxGeometry x="726" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c4" value="字幕转写专家&#10;音频 → 字幕时间线" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=#2980b9" vertex="1" parent="layer3">
+          <mxGeometry x="970" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c5" value="对话记忆&#10;多轮上下文&#10;历史作品回溯" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6" vertex="1" parent="layer3">
+          <mxGeometry x="1220" y="40" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c6" value="SOP 模板库&#10;MV 创作剧本 / 音乐创作剧本&#10;积分咨询 / 通用对话" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="layer3">
+          <mxGeometry x="200" y="110" width="540" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c7" value="快速响应助手&#10;风格标准化 / 文本校对" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6" vertex="1" parent="layer3">
+          <mxGeometry x="770" y="110" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-c8" value="多模态推理&#10;通用大模型备用通道" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6" vertex="1" parent="layer3">
+          <mxGeometry x="1080" y="110" width="320" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4" value="能力工具层 (按创作意图路由)" style="swimlane;startSize=30;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="540" width="1420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-c1" value="状态广播&#10;实时进度推送" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366" vertex="1" parent="layer4">
+          <mxGeometry x="120" y="40" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-c2" value="MV 创作工具集&#10;脚本规划 / 主体图生成&#10;视频生成 / 分镜同步&#10;音视频合成 / 主体与分镜编辑" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;align=left;spacingLeft=24;fontStyle=1" vertex="1" parent="layer4">
+          <mxGeometry x="420" y="40" width="440" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-c2-bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="layer4">
+          <mxGeometry x="420" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-c2-bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="layer4">
+          <mxGeometry x="426" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-c2-bar3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=none" vertex="1" parent="layer4">
+          <mxGeometry x="432" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-c3" value="音乐创作工具集&#10;歌词创作 / 歌曲生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=#e74c3c" vertex="1" parent="layer4">
+          <mxGeometry x="900" y="40" width="440" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="layer5" value="业务服务层" style="swimlane;startSize=30;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="680" width="1420" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-c1" value="作品生成与合成服务&#10;视频模型调度 / 音视频合成&#10;字幕烧录 / 水印与品牌包装&#10;作品二次编辑与版本管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;align=left;spacingLeft=24;fontStyle=1" vertex="1" parent="layer5">
+          <mxGeometry x="120" y="40" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-c1-bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="layer5">
+          <mxGeometry x="120" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-c1-bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="layer5">
+          <mxGeometry x="126" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-c1-bar3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=none" vertex="1" parent="layer5">
+          <mxGeometry x="132" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-c2" value="商业化服务&#10;积分与套餐 / 在线支付&#10;订阅与续费" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366" vertex="1" parent="layer5">
+          <mxGeometry x="720" y="40" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-c3" value="用户与社区服务&#10;用户档案 / OAuth 绑定&#10;用户反馈 / 行为分析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366" vertex="1" parent="layer5">
+          <mxGeometry x="1040" y="40" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="layer6" value="多模型适配层 (AI 模型矩阵)" style="swimlane;startSize=30;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="800" width="1420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c1" value="图像生成模型&#10;主体参考图生成&#10;多主体一致性支持" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#27ae60" vertex="1" parent="layer6">
+          <mxGeometry x="60" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c2" value="视频生成模型矩阵&#10;国内 + 国外多模型并存&#10;按风格 / 分辨率智能调度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#27ae60" vertex="1" parent="layer6">
+          <mxGeometry x="360" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c3" value="音乐 / 语音模型&#10;歌曲生成 / 纯音乐 / 唱歌识别&#10;多语种、多风格" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;align=left;spacingLeft=18" vertex="1" parent="layer6">
+          <mxGeometry x="660" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c3-bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="layer6">
+          <mxGeometry x="660" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c3-bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="layer6">
+          <mxGeometry x="666" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c4" value="口型同步模型&#10;嘴型与歌声逐帧对齐" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=#2980b9" vertex="1" parent="layer6">
+          <mxGeometry x="960" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c5" value="音乐结构分析&#10;BPM / 节拍 / 段落智能识别" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;align=left;spacingLeft=18" vertex="1" parent="layer6">
+          <mxGeometry x="1180" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c5-bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="layer6">
+          <mxGeometry x="1180" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l6-c5-bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="layer6">
+          <mxGeometry x="1186" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="layer7" value="基础设施层" style="swimlane;startSize=30;html=1;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="L1">
+          <mxGeometry x="120" y="940" width="1420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c1" value="媒体处理引擎&#10;视频拼接 / 音频合成 / 精确裁剪&#10;分辨率适配 / 字幕烧录 / 水印" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;align=left;spacingLeft=18" vertex="1" parent="layer7">
+          <mxGeometry x="60" y="40" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c1-bar1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="layer7">
+          <mxGeometry x="60" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c1-bar2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="layer7">
+          <mxGeometry x="66" y="40" width="6" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c2" value="对象存储&#10;海量媒体文件分布式存储&#10;支持私有 / 公开双桶" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="layer7">
+          <mxGeometry x="400" y="40" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c3" value="关系数据库&#10;用户 / 会话 / 任务 / 作品&#10;消息流持久化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#27ae60" vertex="1" parent="layer7">
+          <mxGeometry x="720" y="40" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c4" value="分布式缓存&#10;会话锁 / 任务结果缓存&#10;实时消息队列" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="layer7">
+          <mxGeometry x="1020" y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l7-c5" value="安全与可观测&#10;身份认证 / 权限 / 限流&#10;链路追踪 / 告警 / 通知" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666" vertex="1" parent="layer7">
+          <mxGeometry x="1280" y="40" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-music" value="&amp;nbsp;&amp;nbsp;🎵 强音乐结构" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=#e74c3c;fontSize=12" vertex="1" parent="L1">
+          <mxGeometry x="120" y="1080" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-time" value="&amp;nbsp;&amp;nbsp;⏱ 强时间轴约束" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=#2980b9;fontSize=12" vertex="1" parent="L1">
+          <mxGeometry x="360" y="1080" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-subj" value="&amp;nbsp;&amp;nbsp;👤 强主体一致性" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#27ae60;fontSize=12" vertex="1" parent="L1">
+          <mxGeometry x="600" y="1080" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-multi" value="&amp;nbsp;&amp;nbsp;⬛ 三强全覆盖" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f1;strokeColor=#7f8c8d;fontSize=12" vertex="1" parent="L1">
+          <mxGeometry x="840" y="1080" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-multi-bars" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fadbd8;strokeColor=none" vertex="1" parent="L1">
+          <mxGeometry x="855" y="1086" width="4" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-multi-bars2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6eaf8;strokeColor=none" vertex="1" parent="L1">
+          <mxGeometry x="860" y="1086" width="4" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-multi-bars3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=none" vertex="1" parent="L1">
+          <mxGeometry x="865" y="1086" width="4" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="图例说明：节点背景色 = 该模块承担的'强'约束；多'强'节点采用浅灰背景 + 左侧 2-3 根色条明示。" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2" vertex="1" parent="L1">
+          <mxGeometry x="120" y="1126" width="1420" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="three-strength-map" name="2. 三强约束映射图">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="M0" />
+        <mxCell id="M1" parent="M0" />
+        <mxCell id="mt" value="&quot;三强&quot;约束 → 业务能力映射" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1" vertex="1" parent="M1">
+          <mxGeometry x="300" y="20" width="1060" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music" value="强音乐结构 🎵&#10;Music Structure" style="swimlane;startSize=50;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;fontSize=16;fontStyle=1" vertex="1" parent="M1">
+          <mxGeometry x="60" y="80" width="500" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-1" value="歌词创作能力&#10;将自然语言需求转化为标准化歌词&#10;支持 [风格] / [标题] / [正文] 三段式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="60" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-2" value="歌曲生成能力&#10;支持人声 / 纯音乐双模式&#10;支持男声 / 女声 / 自定义风格标签" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="140" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-3" value="多模型负载均衡&#10;国际音乐生成模型 + 国内音乐生成模型&#10;失败自动切换 / 末尾水印自动去除" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="220" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-4" value="音乐结构智能分析&#10;BPM / 节拍 / 段落自动识别&#10;输出结构化节拍数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="320" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-5" value="分镜节奏对齐&#10;将节拍数据作为上下文输入给脚本生成&#10;输出与音乐节奏对齐的分镜序列" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="420" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-6" value="音频淡入淡出 / 合成&#10;作品末尾 2 秒自然淡出&#10;视频画面与音频轨道精准合并" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="520" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-7" value="面向用户的可控维度&#10;• 歌曲标题 / 风格 / 歌词&#10;• 是否纯音乐 / 男声 / 女声&#10;• 词曲时间戳 (LRC) 供后续 MV 复用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="600" width="460" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-8" value="触发时机: MV 全局规划环节中&#10;节拍分析与脚本生成并行执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="720" width="460" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="m-music-9" value="硬约束 (面向创作者的承诺)&#10;• 同一主体在所有分镜中保持一致&#10;• 单镜头时长不超过 10 秒&#10;• 切镜时间精度 0.001 秒" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="m-music">
+          <mxGeometry x="20" y="780" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time" value="强时间轴约束 ⏱&#10;Time-axis Constraint" style="swimlane;startSize=50;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;fontSize=16;fontStyle=1" vertex="1" parent="M1">
+          <mxGeometry x="580" y="80" width="500" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-1" value="脚本时间精度&#10;每个分镜拥有精确的开始 / 结束 / 时长&#10;毫秒级精度 (0.001s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="60" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-2" value="字幕时间线对齐&#10;字幕行开始 / 结束时间与分镜精准对齐&#10;支持多语种字幕生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="140" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-3" value="唱歌识别能力&#10;针对歌唱场景的语音识别&#10;输出 LRC / SRT 级别时间戳" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="220" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-4" value="视频生成缓存&#10;5 小时智能缓存, 避免重复生成&#10;用户调整时按 (消息, 分镜) 维度复用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="300" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-5" value="媒体精确裁剪与适配&#10;将模型输出精裁到目标时长&#10;720p / 1080p 横竖屏自适应" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="380" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-6" value="最终音视频合成&#10;分镜拼接 + 音轨合并 + 末段淡出&#10;保证总时长与音乐完全一致" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="460" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-7" value="口型同步能力&#10;按分镜时长精确裁剪音频片段&#10;嘴型与歌声逐帧对齐&#10;失败时自动回退到原视频" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="540" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-8" value="字幕烧录&#10;支持中英文字幕 + 自定义字体&#10;按画幅自动调整字号" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="640" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-9" value="贯穿全程的时间数据&#10;• MV 总时长 / 分镜数&#10;• 单分镜 开始 / 结束 / 时长&#10;• 字幕行 时间戳 / 文本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="720" width="460" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="m-time-10" value="触发时机&#10;• MV 全局规划 (节拍 + 字幕识别并行) → 节奏锚点&#10;• 作品合成 (合并 + 淡出 + 字幕烧录) → 最终时间轴" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="m-time">
+          <mxGeometry x="20" y="840" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj" value="强主体一致性 👤&#10;Subject Consistency" style="swimlane;startSize=50;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;rounded=1;fontSize=16;fontStyle=1" vertex="1" parent="M1">
+          <mxGeometry x="1100" y="80" width="500" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-1" value="统一主体档案&#10;主体身份 / 类型 / 描述 / 风格参考&#10;支持 1-7 个主体" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="60" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-2" value="主体参考图生成&#10;批量并行生成, 单任务最多 10 路并发&#10;每次生成都形成独立版本, 可回溯切换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="140" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-3" value="参考图复用机制&#10;同一主体在不同分镜中复用同一份参考图&#10;保证跨镜头的视觉一致性" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="220" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-4" value="主体池集中管理&#10;每个作品维护一份唯一主体池&#10;主体结果图 ID 被永久锁定" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="300" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-5" value="分镜主体绑定&#10;将分镜中引用主体的 ID 解析为&#10;实际参考图 ID, 作为视频模型的统一输入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="380" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-6" value="主体 / 分镜在线编辑&#10;支持新增 / 修改 / 删除三态&#10;修改时自动检测, 主动触发对应分镜重生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="480" width="460" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-7" value="作品库内二次编辑&#10;在已发布作品上单独重做某个主体或某个分镜&#10;保留原版本, 追加新版本供用户切换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="580" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-8" value="用户参考图理解&#10;对用户上传的参考图自动理解&#10;并提示与预期是否匹配, 避免误用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0b8082" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="660" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-9" value="贯穿全程的主体数据&#10;• 主体档案 (身份 / 类型 / 描述 / 风格)&#10;• 主体参考图 ID&#10;• 分镜主体引用表 (主体 ID + 实际文件 ID)&#10;• 主体图历史版本 (可切换)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="740" width="460" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="m-subj-10" value="触发时机&#10;• 用户上传参考图 → 自动理解与匹配确认&#10;• 主体图生成 → 主体池建立&#10;• 分镜脚本更新 → 主体融入分镜&#10;• 视频片段生成 → 主体参考喂入模型" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="m-subj">
+          <mxGeometry x="20" y="880" width="460" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mv-pipeline" name="3. MV 创作端到端流程图">
+    <mxGraphModel dx="2000" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="P0" />
+        <mxCell id="P1" parent="P0" />
+        <mxCell id="pt" value="MV 创作端到端流程 (8 步标准作业流程)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="600" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p-user" value="创作者&#10;用户 / 客户" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="60" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-vioservice" value="对话编排&#10;实时流式会话&#10;进度实时同步" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="240" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-assistant" value="AI 创作助手&#10;意图理解 + 流程编排&#10;加载 MV 创作剧本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="500" y="80" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-mvtool" value="MV 创作工具集" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="780" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-project" value="作品生成与合成服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="1040" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-vlm" value="多模型适配层&#10;图像 / 视频 / 音乐 /&#10;口型 / 节拍分析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="1300" y="80" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-infra" value="基础设施&#10;媒体处理引擎 / 对象存储&#10;数据库 / 缓存" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="1580" y="80" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sse" value="实时推送通道&#10;进度 / 主体 / 视频 / 文字" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="P1">
+          <mxGeometry x="1820" y="80" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step1" value="Step 1: 创意理解&#10;提取音频 / 风格 / 画幅 / 歌词 / 参考图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="P1">
+          <mxGeometry x="60" y="180" width="360" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step15" value="Step 1.5: 参考图智能理解&#10;对用户上传图自动描述 + 匹配度评估&#10;匹配度低时主动提醒用户确认" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="P1">
+          <mxGeometry x="60" y="250" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step2" value="Step 2: 完整性校验 (核心红线)&#10;缺少音频 → 终止生成, 引导上传 / 现创作" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="P1">
+          <mxGeometry x="60" y="330" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step3" value="Step 3: 任务初始化&#10;为本次创作分配唯一任务编号&#10;贯穿后续所有步骤" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="P1">
+          <mxGeometry x="60" y="410" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step4" value="Step 4: 全局规划 ★ 并行执行&#10;├─ 音乐结构分析 (BPM / 节拍 / 段落) 🎵⏱&#10;├─ 风格标准化&#10;├─ 唱歌识别 (字幕时间线) ⏱&#10;└─ 脚本生成 → 输出 分镜表 + 主体表 🎵⏱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="P1">
+          <mxGeometry x="60" y="490" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step5" value="Step 5: 主体参考图生成 👤&#10;├─ 多主体并发生成 (最多 10 路)&#10;├─ 调用图像模型, 锁定参考图&#10;├─ 历史版本可回溯, 切换&#10;⚠ 等待用户确认主体图才能继续" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="P1">
+          <mxGeometry x="60" y="630" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step6" value="Step 6: 分镜脚本确认 👤⏱&#10;├─ 将主体融入分镜&#10;├─ 推送到前端分镜展示&#10;⚠ 等待用户确认分镜才能继续" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="P1">
+          <mxGeometry x="60" y="760" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step7" value="Step 7: 视频片段生成 👤⏱&#10;├─ 主体参考 ID 绑定, 传入视频模型&#10;├─ 多分镜并发生成 (最多 10 路)&#10;├─ 视频模型智能调度&#10;├─ 媒体精裁到目标时长 + 分辨率适配&#10;├─ 5 小时智能缓存避免重复生成&#10;⚠ 等待用户确认视频片段才能继续" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="P1">
+          <mxGeometry x="60" y="860" width="360" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p-step8" value="Step 8: 音视频合成 ⏱🎵&#10;├─ 可选: 按分镜对口型 (嘴型同步) ⏱&#10;├─ 分镜画面拼接&#10;├─ 合并歌曲 + 末段 2 秒淡出 🎵&#10;├─ 免费用户自动加水印 + 品牌片尾&#10;└─ 可选: 字幕烧录到画面" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="P1">
+          <mxGeometry x="60" y="1040" width="360" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p-payload" value="统一任务载荷&#10;贯穿整个 MV 创作全流程&#10;├─ 主体池 (含锁定的主体图 ID) 👤&#10;├─ 分镜表 (分镜 + 主体引用绑定) 👤⏱&#10;├─ 音频文件 ID&#10;├─ 字幕时间线 ⏱&#10;├─ 画幅 / 分辨率&#10;└─ 智能缓存键 (5 小时)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="P1">
+          <mxGeometry x="480" y="180" width="380" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="p-script" value="MV 脚本 (AI 生成)&#10;├─ 内容概要&#10;├─ MV 总时长 (秒)&#10;├─ 分镜数&#10;├─ 主体列表 → 主体 ID 集合&#10;└─ 分镜表 → 开始 / 结束 / 时长 ⏱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="P1">
+          <mxGeometry x="480" y="380" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p-ssemag" value="实时推送消息类型&#10;├─ 初始化 / 文字 / 思考过程&#10;├─ 主体图 (含历史版本) 👤&#10;├─ 分镜 (含历史版本) 👤⏱&#10;├─ 分镜脚本 / 视频 / 音频 / 歌词&#10;└─ 错误 / 完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="P1">
+          <mxGeometry x="480" y="520" width="380" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p-vioproj" value="最终作品&#10;├─ 作品 ID (内容指纹)&#10;├─ 预览图 ID&#10;├─ 作品类型: MV&#10;└─ 完整元数据 (用于资源库展示)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="P1">
+          <mxGeometry x="480" y="700" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-lipsync" value="口型同步能力&#10;├─ 按分镜时长精确裁剪对应音频片段&#10;├─ 调用口型同步模型 (逐帧嘴型对齐)&#10;└─ 失败时自动回退到原视频" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="P1">
+          <mxGeometry x="900" y="180" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-analyzer" value="音乐结构分析&#10;├─ 智能识别 BPM (每分钟节拍数)&#10;├─ 智能识别每个节拍时间点&#10;└─ 智能识别段落 (主歌 / 副歌 / 间奏)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="P1">
+          <mxGeometry x="900" y="300" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-subtitle" value="字幕转写能力&#10;├─ 专门针对唱歌场景&#10;├─ 输出 LRC / SRT 级别时间戳&#10;└─ 与分镜严格对齐" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="P1">
+          <mxGeometry x="900" y="420" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-vlm2" value="视频模型智能调度&#10;├─ 国际视频生成模型&#10;├─ 国产视频生成模型 (快速版 / 高质量版)&#10;└─ 按风格 / 分辨率 / 画幅智能选择&#10;⚠ 注意: 主体图与视频生成需在同一账号, 保证一致性 👤" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="P1">
+          <mxGeometry x="900" y="540" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p-cv" value="媒体处理引擎 ⏱🎵&#10;├─ 视频拼接 — 多分镜拼成完整 MV&#10;├─ 音视频合成 — 合并歌曲 + 末段淡出&#10;├─ 精确裁剪 — 视频 / 音频按毫秒级截取&#10;├─ 分辨率适配 — 720p / 1080p 横竖屏&#10;├─ 字幕烧录 — 字体 / 字号自适应画幅&#10;├─ 水印叠加 / 品牌片尾拼接&#10;└─ 元数据提取 / 缩略图生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="P1">
+          <mxGeometry x="900" y="680" width="380" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="p-tos" value="对象存储&#10;├─ 私有桶: 存储用户作品原始文件&#10;└─ 公开桶: 存储分享预览图&#10;按年月自动归档" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="P1">
+          <mxGeometry x="1340" y="180" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sse2" value="实时推送机制&#10;├─ 助手产生消息 → 写入消息流 + 缓存队列&#10;├─ 消费线程拉取并推送给用户终端&#10;└─ 端到端秒级可达" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="P1">
+          <mxGeometry x="1340" y="300" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p-queue" value="分布式缓存&#10;├─ 实时消息队列 (对话进度推送)&#10;├─ 会话锁 (防止同一会话并发)&#10;├─ 任务结果缓存 (5 小时避免重复生成)&#10;├─ 分享链接缓存 (3 天有效)&#10;└─ 口型同步临时文件 (24 小时)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="P1">
+          <mxGeometry x="1340" y="420" width="380" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="p-mysql" value="关系数据库&#10;├─ 会话表 (用户与 AI 的对话)&#10;├─ 任务表 (每次 MV 创作的任务)&#10;├─ 消息流表 (流式生成的中间片段)&#10;└─ 作品表 (用户最终作品)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="P1">
+          <mxGeometry x="1340" y="600" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="P1" source="p-user" target="p-vioservice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="P1" source="p-vioservice" target="p-assistant">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="P1" source="p-assistant" target="p-mvtool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="P1" source="p-mvtool" target="p-project">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="P1" source="p-project" target="p-vlm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5" edge="1" parent="P1" source="p-vlm" target="p-infra">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1" edge="1" parent="P1" source="p-infra" target="p-sse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1" edge="1" parent="P1" source="p-sse" target="p-user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f-1" value="创作需求" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="180" y="135" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f-2" value="意图路由" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="440" y="135" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f-3" value="流程编排" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="720" y="135" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f-4" value="调度执行" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="980" y="135" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f-5" value="AI 模型调用" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="1240" y="135" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f-6" value="媒体存储" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="1520" y="135" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f-7" value="消息分发" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11" vertex="1" parent="P1">
+          <mxGeometry x="1760" y="135" width="80" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="music-pipeline" name="4. Music 创作支线流程图">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="MU0" />
+        <mxCell id="MU1" parent="MU0" />
+        <mxCell id="mut" value="音乐创作支线 — 智能对话路径 &amp; 开放接口路径" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="MU1">
+          <mxGeometry x="200" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="agent-path" value="路径 A: 智能对话 (面向 C 端用户)" style="swimlane;startSize=30;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="MU1">
+          <mxGeometry x="60" y="80" width="780" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="用户: &quot;帮我写一首关于夏天的歌&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="40" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="对话编排&#10;创建会话 / 持久化历史&#10;实时推送" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="40" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="AI 创作助手&#10;识别意图 → 音乐创作&#10;加载音乐创作剧本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="120" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="歌词创作&#10;AI 生成标准化歌词&#10;(风格 / 标题 / 正文)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="120" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="歌词实时推送给用户" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="210" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="歌曲生成&#10;调用多模型负载均衡能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="210" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="主模型成功?&#10;→ 是: 采用主模型&#10;→ 否: 自动切换备选模型" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="300" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" value="国际音乐生成模型&#10;支持带人声 / 上传播放&#10;(主模型)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="300" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" value="国内音乐生成模型&#10;支持人声 / 纯乐器 / 自动去水印&#10;(备选模型)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="380" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" value="音频末尾水印自动裁剪&#10;(末 5 秒智能去除)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="460" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" value="音乐作品信息&#10;标题 / 风格 / 歌词 / 词曲时间戳 / 试听 / 封面" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="390" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" value="积分自动扣减" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="460" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a13" value="作品入库&#10;音乐文件 + 封面 + 元数据&#10;对象存储自动归档" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="530" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a14" value="作品实时推送给用户" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="agent-path">
+          <mxGeometry x="340" y="530" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a15" value="面向用户的可控维度&#10;• 歌曲标题 / 风格 / 歌词&#10;• 是否纯音乐 / 男声 / 女声&#10;• 词曲时间戳 (LRC) 供后续 MV 复用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="620" width="600" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a16" value="音乐创作剧本 (4 步标准作业流程)&#10;• 第 1 步: 提取 风格 / 是否纯音乐 / 歌词 / 标题&#10;• 第 2 步: 风格必填校验&#10;• 第 3 步: 分支 A / B / C (纯音乐 / 用户歌词 / 自动歌词)&#10;• 第 4 步: 调用歌曲生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="720" width="600" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a17" value="强约束映射 (智能对话路径)&#10;🎵 强音乐结构: 歌词创作 + 歌曲生成, 多维度可控 (性别 / 纯音乐 / 歌词)&#10;⏱ 时间轴: 词曲时间戳 (LRC) 可被后续 MV 脚本生成直接引用&#10;👤 主体一致性: 音乐支线无主体图, 不涉及" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="agent-path">
+          <mxGeometry x="20" y="860" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="skill-path" value="路径 B: 开放接口 (面向 ISV / 平台型客户)" style="swimlane;startSize=30;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="MU1">
+          <mxGeometry x="860" y="80" width="740" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="第三方开发者&#10;通过 APIKey 调用标准接口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="40" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="开放接口网关&#10;APIKey 鉴权 + 流量控制&#10;异步任务分发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="skill-path">
+          <mxGeometry x="340" y="40" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="歌词生成接口&#10;复用与对话路径相同的 AI 能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="120" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="音乐生成提交接口&#10;异步执行&#10;写入分布式状态记录" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="200" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="音乐生成查询接口&#10;读分布式状态&#10;支持轮询 / 直接查询" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="skill-path">
+          <mxGeometry x="340" y="200" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" value="MV 一键生成接口 (全链路)&#10;→ 脚本规划 + 主体图 + 视频 + 合成&#10;一次提交, 全程自动化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="310" width="600" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" value="⚠ 强约束校验&#10;MV 全流程按模型 + 分辨率自动计费,&#10;提交时一次性校验积分, 不足直接拒绝" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="420" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s8" value="能力描述文档&#10;音乐生成 / MV 生成 / 上传&#10;为开发者提供标准化接入指南" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="510" width="600" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s9" value="面向开发者的可控维度&#10;• 异步任务标识 / 状态轮询&#10;• 一次性计费&#10;• 与对话路径完全一致的音乐生成能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="600" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s10" value="智能对话路径 vs 开放接口路径对比&#10;• 对话路径: 实时流式, 支持多轮对话 / 修改, 按调用计费&#10;• 接口路径: 标准 REST, 单次提交, 按任务计费&#10;• 共性: 都使用相同的音乐生成与 MV 合成能力" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="730" width="600" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s11" value="强约束映射 (开放接口路径)&#10;🎵 强音乐结构: 与对话路径共用同一组音乐生成模型&#10;⏱ 时间轴: MV 全链路与对话路径完全一致的时间精度&#10;👤 主体一致性: MV 全链路内主体参考图与视频生成一致" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082" vertex="1" parent="skill-path">
+          <mxGeometry x="20" y="880" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a1" target="a2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a2" target="a3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a3" target="a4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a4" target="a5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a5" target="a6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a6" target="a7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a7" target="a8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a8" target="a11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a7" target="a9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a9" target="a10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a10" target="a11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a11" target="a12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a12" target="a13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-a14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="a13" target="a14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s4" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s6" target="s7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-s7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1" edge="1" parent="MU1" source="s7" target="s8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="data-model" name="5. 核心数据模型关系图">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="D0" />
+        <mxCell id="D1" parent="D0" />
+        <mxCell id="dt" value="核心数据模型关系图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="D1">
+          <mxGeometry x="400" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d-script" value="MV 脚本 (AI 生成)&#10;─────────────────────&#10;内容概要: 文本&#10;MV 总时长 (秒): 数值&#10;分镜数: 整数&#10;画幅: 横屏 / 竖屏&#10;主体列表: 1..7 个主体&#10;分镜表: N 个分镜" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="80" y="100" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="d-subject" value="主体档案&#10;(统一主体池, 1..7 个)&#10;─────────────────────&#10;主体 ID: 字符串 (全局唯一)&#10;主体类型: 角色 / 物品 / 场景&#10;主体描述: 文本&#10;风格参考: 图片引用列表" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="500" y="80" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="d-scene" value="分镜 (单镜头)&#10;─────────────────────&#10;分镜 ID: 字符串&#10;开始时间: 数值 (0.001s 精度) ⏱&#10;结束时间: 数值&#10;时长: 数值&#10;主体引用: 主体 ID 列表 👤&#10;画面描述: 文本&#10;是否口型同步: 是 / 否" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="500" y="280" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d-payload" value="统一任务载荷&#10;(贯穿 MV 全流程的单一可信源)&#10;─────────────────────&#10;主体列表: 主体档案集合&#10;分镜表: 分镜集合&#10;画幅 / 分辨率&#10;音频文件 ID&#10;字幕时间线: 字幕行列表 ⏱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=12;fontStyle=1" vertex="1" parent="D1">
+          <mxGeometry x="900" y="100" width="360" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="d-payloadsubject" value="主体档案 + 锁定主体图&#10;─────────────────────&#10;继承: 主体档案所有字段&#10;+ 锁定主体图 ID: 字符串  👤" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="1340" y="100" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="d-payloadscene" value="分镜 + 绑定主体&#10;─────────────────────&#10;继承: 分镜所有字段&#10;+ 分镜视频文件 ID&#10;+ 口型同步文件 ID  ⏱&#10;+ 主体引用解析表 👤&#10;  (主体 ID → 实际文件 ID)&#10;+ 智能缓存键 (5 小时)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="1340" y="220" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d-scenesubject" value="主体引用解析结果&#10;(视频模型直接消费的格式)&#10;─────────────────────&#10;主体 ID: 字符串&#10;主体图 ID: 字符串  👤" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="1340" y="420" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="d-subtitle" value="字幕时间线&#10;─────────────────────&#10;音频总时长: 数值&#10;字幕行: 列表 (开始 / 结束 / 文本) ⏱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="900" y="320" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="d-bt" value="音乐结构数据&#10;(BPM / 节拍 / 段落)&#10;─────────────────────&#10;BPM: 每分钟节拍数&#10;节拍点: 时间戳列表&#10;段落: 段落列表&#10;→ 注入到脚本生成的 AI 上下文" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="80" y="320" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p-lipsync" value="单分镜视频生成参数&#10;─────────────────────&#10;画面描述 / 时长&#10;开始时间 / 结束时间 ⏱&#10;主体 / 任务片段 ID&#10;画幅 / 分辨率" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="500" y="500" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d-sse" value="实时推送消息格式 (类型联合)&#10;─────────────────────&#10;初始化 / 文字 / 思考过程&#10;主体图 (含历史版本)  👤&#10;分镜 (含历史版本)  👤⏱&#10;分镜脚本 / 视频 / 音频 / 歌词&#10;错误 / 完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=12;fontStyle=1" vertex="1" parent="D1">
+          <mxGeometry x="80" y="660" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="d-sse-subj" value="主体图版本化&#10;用户可切换历史版本  👤" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="780" y="660" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d-sse-scene" value="分镜版本化&#10;用户可切换历史版本 / 触发重做  👤⏱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4f1f4;strokeColor=#0b8082;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="780" y="740" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d-vioproject" value="最终作品 (入库)&#10;─────────────────────&#10;作品 ID: 内容指纹&#10;文件 ID / 预览图 ID&#10;作品名称 / 时长&#10;歌词 / 元数据&#10;作品类型: MV / 音乐 / ...&#10;归属: 用户 / 会话 / 消息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="900" y="500" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d-mvmetavo" value="作品元数据&#10;(资源库展示用)&#10;─────────────────────&#10;分镜信息 + 参考图 (回显)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="1340" y="540" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d-seshelper" value="实时消息生成器&#10;─────────────────────&#10;会话 / 任务 / 消息 ID&#10;消息流持久化 + 缓存队列&#10;&#10;可生成的消息类型:&#10;初始化 / 文字 / 歌词 / 图片 / 音频&#10;视频 / 主体 / 分镜 / 分镜脚本 / 思考&#10;完成 / 错误" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="80" y="860" width="600" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="d-redis" value="分布式缓存&#10;实时消息队列 (对话进度)&#10;+ 任务结果缓存 (5 小时)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="780" y="900" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="d-mysql" value="关系数据库&#10;用户消息 (输入)&#10;流式消息片段 (AI 输出)&#10;任务表 (载荷 JSON)&#10;作品表 (成品)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=10;fontSize=12" vertex="1" parent="D1">
+          <mxGeometry x="1100" y="860" width="600" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=0;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-script" target="d-subject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-e1" value="1..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="D1">
+          <mxGeometry x="410" y="100" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=0;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-script" target="d-scene">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-e2" value="1..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="D1">
+          <mxGeometry x="410" y="320" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-payload" target="d-payloadsubject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-payload" target="d-payloadscene">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endSize=12;dashed=1;fontSize=11" edge="1" parent="D1" source="d-payloadsubject" target="d-subject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-e5" value="继承" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2" vertex="1" parent="D1">
+          <mxGeometry x="900" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endSize=12;dashed=1;fontSize=11" edge="1" parent="D1" source="d-payloadscene" target="d-scene">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-e6" value="继承" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2" vertex="1" parent="D1">
+          <mxGeometry x="900" y="370" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-payloadscene" target="d-scenesubject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-payload" target="d-subtitle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="p-lipsync" target="d-payloadscene">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-sse" target="d-sse-subj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-sse" target="d-sse-scene">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-vioproject" target="d-mvmetavo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-seshelper" target="d-sse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-seshelper" target="d-redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-seshelper" target="d-mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-subject" target="d-scene">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-e16" value="分镜引用主体 ID  👤" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2" vertex="1" parent="D1">
+          <mxGeometry x="850" y="240" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e-d17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endSize=12;fontSize=11" edge="1" parent="D1" source="d-bt" target="d-script">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-e17" value="节拍注入 AI 上下文" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2" vertex="1" parent="D1">
+          <mxGeometry x="60" y="280" width="180" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

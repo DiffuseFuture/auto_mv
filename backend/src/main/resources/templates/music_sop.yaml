@@ -1,0 +1,46 @@
+currentIntentName: "音乐制作 (Music Generation)"
+dynamicSopContent: |
+  请严格按照以下步骤进行思考和执行：
+
+  ### Step 1: 分析用户意图与参数提取
+  - 分析用户输入，提取关键信息以构建 `MakeMusicArgs`：
+    - **Style (styles)**: 歌曲的流派（如 Pop, Rock, Jazz 等）。[必需]
+    - **Instrumental Flag (instrumental)**:
+      - *判定依据*: 用户输入中包含 "纯音乐"、"无歌词"、"伴奏" 或风格本身即为纯音乐流派。
+      - *逻辑*: 如果是纯音乐意图，`instrumental` = `true`；否则默认为 `false`。
+    - **UserLyrics (用户歌词)**: 用户是否直接提供了具体的歌词内容？
+    - **Topic (主题)**: 用于生成歌词或标题的主题。
+    - **Title (title)**: 提取用户指定的歌名；如果未指定，请根据主题或歌词内容自动生成一个简短的歌名。
+
+  ### Step 2: 完整性检查 (Critical Step)
+  - **检查 Style 是否存在**：
+    - **如果缺少 Style**：你**必须**停止后续步骤，直接向用户询问：“请问您希望这首歌是什么风格的？”（不要自己编造风格）。
+    - **如果 Style 存在**：继续执行 Step 3。
+
+  ### Step 3: 确定内容来源 (Branching Logic)
+  根据 Step 1 的分析结果，选择且仅选择以下一条路径来确定 `lyrics` 和 `instrumental` 的值：
+
+  - **分支 A：纯音乐模式 (Instrumental Mode)**
+    - **触发条件**：`instrumental` 被判定为 `true`。
+    - **动作**：跳过 `makeLyrics` 工具；将 `lyrics` 置空 `""`；确保 `instrumental` 为 `true`。
+  - **分支 B：用户已提供歌词 (User Lyrics)**
+    - **触发条件**：`instrumental` 为 `false`，且用户提供了歌词。
+    - **动作**：跳过 `makeLyrics` 工具；将用户提供的歌词赋值给 `lyrics`；确保 `instrumental` 为 `false`。
+  - **分支 C：需要生成歌词 (Auto Lyrics)**
+    - **触发条件**：`instrumental` 为 `false`，且用户**未**提供歌词。
+    - **动作**：调用 `makeLyrics` 工具获取歌词；赋值给 `lyrics`；确保 `instrumental` 为 `false`。
+
+  ### Step 4: 生成音乐
+  - 汇总所有参数：`title`, `lyrics`, `styles`, `instrumental`。
+  - 调用 `makeMusic` 工具，传入对应的参数对象。
+
+  ### Constraints (强制约束)
+  1. **Style 必填**：严禁在用户未指定风格的情况下默认生成，必须拦截追问。
+  2. **Instrumental 参数控制**：要求纯音乐时务必 `instrumental=true` 且 `lyrics=""`；有人声务必 `instrumental=false`。
+  3. **Title 自动补全**：若无歌名，请务必自动生成适配风格的标题。
+
+dynamicExamples: |
+  **示例 1：缺少风格参数（触发提问拦截）**
+  *User:* "帮我写一首关于夏天的歌"
+  *Assistant (Internal Thought - 不输出):* 检查参数：主题(夏天), Style(无)。缺少Style，必须先提问，不能直接生成。
+  *Assistant:* "好的！关于夏天的歌很有画面感。请问您希望这首歌是什么风格的？比如活泼的流行乐、动感的摇滚、还是舒缓的民谣呢？"

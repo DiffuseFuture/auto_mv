@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 阿里巴巴普惠体 3.0 字体声明 */
+
+/* Light 细体 */
+@font-face {
+    font-family: 'Alibaba PuHuiTi 3.0';
+    src: url('./assets/font/AlibabaPuHuiTi-3-45-Light.woff2') format('woff2'),
+         url('./assets/font/AlibabaPuHuiTi-3-45-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular 常规体 */
+@font-face {
+    font-family: 'Alibaba PuHuiTi 3.0';
+    src: url('./assets/font/AlibabaPuHuiTi-3-55-RegularL3.woff2') format('woff2'),
+         url('./assets/font/AlibabaPuHuiTi-3-55-RegularL3.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium 中等粗体 */
+@font-face {
+    font-family: 'Alibaba PuHuiTi 3.0';
+    src: url('./assets/font/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2'),
+         url('./assets/font/AlibabaPuHuiTi-3-65-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium 很粗 */
+@font-face {
+    font-family: 'Alibaba PuHuiTi 3.0';
+    src: url('./assets/font/AlibabaPuHuiTi-3-85-Bold.woff') format('woff2'),
+    url('./assets/font/AlibabaPuHuiTi-3-85-Bold.woff2') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+/* 恢复输入框和文本域的光标显示 */
+input, textarea, [contenteditable="true"] {
+    caret-color: auto;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    background: #000;
+}
+
+html, body, #app {
+    width: 100%;
+    height: 100%;
+}
+
+/* 禁用 iOS Safari 的橡皮筋回弹（rubber-band overscroll）：
+   滚动到容器边界后继续拖动会拽出整个文档，露出底部视频背景。
+   overscroll-behavior: none 让浏览器在边界处停住，不再触发回弹和滚动链式传播。 */
+html, body {
+    overscroll-behavior: none;
+}
+
+/**
+ * 移动端 rem 响应式基准（不影响 PC）
+ * - 是否移动端由 JS（isMobileClient）判断后给 html 打 `is-mobile` 类
+ * - 当前项目移动端尺寸以 375 设计稿为主：375 宽时 1rem≈16px
+ * - 用 clamp 限制极小/极大屏，避免过小难读或过大溢出
+ *
+ * 说明：配合 PostCSS（px->rem），移动端样式会随屏幕宽度缩放。
+ * 构建时会自动转换成 rem，并随着屏幕宽度变化而缩放。
+ */
+html.is-mobile {
+    font-size: clamp(14px, 4.2666667vw, 18px);
+}
+
+:root {
+    font-family: 'Alibaba PuHuiTi 3.0', 'Alibaba PuHuiTi 30';
+    line-height: 1;
+    color-scheme: light dark;
+    color: #000000;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #333;
+        background-color: #f5f7fa;
+    }
+}
+
+.el-main {
+    padding: 0;
+}
+
+.min-screen {
+    min-width: 1280px;
+}
+
+@layer components {
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+
+    .flex-col-center {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
+
+    .flex-col-between {
+        @apply flex flex-col justify-between items-center;
+    }
+}
+
+/* 上传图片意图选择器（home/creation 共享） */
+.intention-select-host .intention-select {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    transition: width 0.2s ease;
+}
+
+.intention-select-host .intention-select .el-select__wrapper {
+    height: 28px !important;
+    min-height: 28px !important;
+    padding: 0 0 0 8px !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    border: none !important;
+    border-radius: 9px !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: none !important;
+    @apply backdrop-blur-[8px];
+    transition: all 0.2s ease !important;
+}
+
+.intention-select-host .intention-select .el-select__prefix {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.intention-select-host .intention-select .el-select__selection {
+    display: none;
+}
+
+.intention-select-host .intention-select .el-select__selected-item,
+.intention-select-host .intention-select .el-select__placeholder {
+    font-size: 12px !important;
+    color: #FFFFFF !important;
+    white-space: nowrap;
+    overflow: visible !important;
+    text-overflow: clip !important;
+}
+
+.intention-select-host .intention-select .el-select__suffix {
+    display: none;
+}
+
+.intention-select-host .intention-select .el-select__suffix .el-icon {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 10px;
+}
+
+/* 移动端图片意图选择器：保持 PC 同款下拉项，但触发器为紧凑图标按钮。 */
+.intention-select-host .mobile-intention-select {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+}
+
+.intention-select-host .mobile-intention-select .el-select__wrapper {
+    height: 16px !important;
+    min-height: 16px !important;
+    padding: 0 0 0 3px !important;
+    border: none !important;
+    border-radius: 0 6px 0 0 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    box-shadow: none !important;
+}
+
+.intention-select-host .mobile-intention-select .el-select__prefix {
+    margin: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.intention-select-host .mobile-intention-select .el-select__selection,
+.intention-select-host .mobile-intention-select .el-select__suffix {
+    display: none !important;
+}
+
+.intention-select-host .intention-select:hover,
+.intention-select-host .intention-select.is-expanded {
+    width: calc(100% - 12px);
+}
+
+.intention-select-host .intention-select:hover .el-select__wrapper,
+.intention-select-host .intention-select.is-expanded .el-select__wrapper {
+    padding: 0 8px !important;
+    background: rgba(0, 0, 0, 0.72) !important;
+}
+
+.intention-select-host .intention-select:hover .el-select__selection,
+.intention-select-host .intention-select.is-expanded .el-select__selection {
+    display: flex;
+    margin-left: 5px;
+    flex: 1;
+    min-width: 0;
+    overflow: visible !important;
+}
+
+.intention-select-host .intention-select:hover .el-select__suffix,
+.intention-select-host .intention-select.is-expanded .el-select__suffix {
+    display: flex !important;
+}
+
+/* 图片 intention 下拉面板（teleport 到 body） */
+.intention-dropdown {
+    background: #1a1a1a !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: -2px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    min-width: 80px !important;
+}
+
+.intention-dropdown .el-popper__arrow {
+    display: none;
+}
+
+.intention-dropdown .el-select-dropdown {
+    background: #1a1a1a !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    padding: 4px 0 !important;
+}
+
+.intention-dropdown .el-select-dropdown__item {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+}
+
+.intention-dropdown .el-select-dropdown__item:hover,
+.intention-dropdown .el-select-dropdown__item.is-hovering {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #FFFFFF;
+}
+
+.intention-dropdown .el-select-dropdown__item.is-selected {
+    color: #C2FF00;
+    font-weight: 500;
+}
+
+.intention-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 全局图片预览：自适应大弹窗 */
+.el-image-viewer__wrapper {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.el-image-viewer__canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 3vw, 48px) clamp(72px, 8vw, 132px);
+}
+
+.el-image-viewer__canvas img {
+    max-width: min(84vw, 1500px) !important;
+    max-height: calc(100vh - clamp(110px, 12vh, 160px)) !important;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+    background: #0f0f10;
+}
